@@ -1,9 +1,5 @@
 # 🌿 PureHarvest – The Organic Marketplace for a Healthier Future
 
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Issues](https://img.shields.io/github/issues/yourusername/pureharvest)](https://github.com/yourusername/pureharvest/issues)
-[![Forks](https://img.shields.io/github/forks/yourusername/pureharvest)](https://github.com/yourusername/pureharvest/network)
-[![Stars](https://img.shields.io/github/stars/yourusername/pureharvest)](https://github.com/yourusername/pureharvest/stargazers)
 
 > **PureHarvest** is a web-based platform that connects **organic farmers, fertilizer sellers, and customers** directly — eliminating intermediaries, ensuring genuine organic produce, and promoting a sustainable farming ecosystem in Sri Lanka.
 
@@ -103,7 +99,7 @@ This ensures that **fresh, verified, and organic products** reach customers dire
 
 ### 🗄️ Back-End Development
 - **Server Framework:** Node.js  
-- **Database:** MongoDB (for users, products, orders, and transactions).  
+- **Database:**SQL (for users, products, orders, and transactions).  
 - **Authentication:** OAuth 2.0 (Email/Google/Facebook) + JWT for secure sessions.  
 
 ### 🔗 APIs & Integrations
@@ -138,9 +134,9 @@ This ensures that **fresh, verified, and organic products** reach customers dire
 
 | Layer | Technology |
 |-------|-------------|
-| **Frontend** | React.js, Tailwind CSS / Bootstrap |
-| **Backend** | Node.js, Express.js |
-| **Database** | MongoDB |
+| **Frontend** | React.js, Tailwind CSS  |
+| **Backend** | Node.js, |
+| **Database** | MySQL |
 | **AI Chatbot** | NLP-based Bot using Dialogflow / Rasa |
 | **Authentication** | OAuth 2.0, JWT |
 | **Geolocation & Maps** | Google Maps API |
