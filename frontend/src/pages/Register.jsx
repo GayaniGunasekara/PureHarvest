@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import api from '../api';
+import api from '../utils/api';
 import { useNavigate } from 'react-router-dom';
 import { setToken } from '../utils/auth';
 
@@ -13,29 +13,31 @@ export default function Register() {
 
     const submit = async (e) => {
         e.preventDefault();
+        setErr('');
         try {
             const res = await api.post('/auth/register', { name, email, password, role });
             setToken(res.data.token);
             nav(`/${role}`);
-        } catch (err) {
-            setErr(err.response?.data?.message || 'Failed');
+            window.location.reload();
+        } catch (error) {
+            setErr(error.response?.data?.message || 'Registration failed');
         }
     };
 
     return (
-        <form onSubmit={submit} style={{ padding: 20 }}>
+        <form className="form card" onSubmit={submit}>
             <h2>Register</h2>
-            {err && <div style={{ color: 'red' }}>{err}</div>}
-            <input value={name} onChange={e => setName(e.target.value)} placeholder="Name" /><br />
-            <input value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" /><br />
-            <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" /><br />
+            {err && <div className="error">{err}</div>}
+            <input value={name} onChange={e => setName(e.target.value)} placeholder="Name" required />
+            <input value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" type="email" required />
+            <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" required />
             <select value={role} onChange={e => setRole(e.target.value)}>
                 <option>Farmer</option>
                 <option>FertilizerSeller</option>
                 <option>Customer</option>
                 <option>Driver</option>
-            </select><br />
-            <button type="submit">Register</button>
+            </select>
+            <button type="submit" className="btn">Register</button>
         </form>
     );
 }

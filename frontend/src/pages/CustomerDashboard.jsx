@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import api from '../api';
+import api from '../utils/api';
 
 export default function CustomerDashboard() {
     const [q, setQ] = useState('');
@@ -32,29 +32,36 @@ export default function CustomerDashboard() {
     };
 
     return (
-        <div style={{ padding: 20 }}>
+        <div className="container">
             <h2>Customer Dashboard</h2>
-            <div>
+            <div className="search-row">
                 <input value={q} onChange={e => setQ(e.target.value)} placeholder="Search products" />
-                <button onClick={fetchProducts}>Search</button>
+                <button onClick={fetchProducts} className="btn">Search</button>
             </div>
-            <div style={{ display: 'flex', gap: 20, marginTop: 10 }}>
-                <div style={{ flex: 1 }}>
+
+            <div className="grid">
+                <div className="card list">
                     <h3>Products</h3>
                     {products.map(p => (
-                        <div key={p.id} style={{ border: '1px solid #ddd', padding: 8, marginBottom: 6 }}>
-                            <strong>{p.title}</strong> - {p.price} <br />
-                            <small>By: {p.owner_name}</small><br />
-                            <button onClick={() => addToCart(p)}>Add</button>
+                        <div key={p.id} className="product-row">
+                            <div>
+                                <strong>{p.title}</strong> - {p.price}
+                                <div className="small">By: {p.owner_name}</div>
+                            </div>
+                            <div>
+                                <button className="btn" onClick={() => addToCart(p)}>Add</button>
+                            </div>
                         </div>
                     ))}
                 </div>
-                <div style={{ width: 300 }}>
+
+                <div className="card side">
                     <h3>Cart</h3>
+                    {cart.length === 0 && <div>No items</div>}
                     {cart.map(c => (
-                        <div key={c.product_id}>{c.product_id} x {c.qty}</div>
+                        <div key={c.product_id} className="cart-row">{c.product_id} x {c.qty}</div>
                     ))}
-                    <button onClick={placeOrder} disabled={!cart.length}>Place Order</button>
+                    <button onClick={placeOrder} disabled={!cart.length} className="btn">Place Order</button>
                 </div>
             </div>
         </div>

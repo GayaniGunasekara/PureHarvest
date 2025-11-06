@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import api from '../api';
+import api from '../utils/api';
 import { useNavigate } from 'react-router-dom';
 import { setToken } from '../utils/auth';
 
@@ -12,28 +12,30 @@ export default function Login() {
 
     const submit = async (e) => {
         e.preventDefault();
+        setErr('');
         try {
             const res = await api.post('/auth/login', { email, password, role });
             setToken(res.data.token);
             nav(`/${role}`);
-        } catch (err) {
-            setErr(err.response?.data?.message || 'Login failed');
+            window.location.reload();
+        } catch (error) {
+            setErr(error.response?.data?.message || 'Login failed');
         }
     };
 
     return (
-        <form onSubmit={submit} style={{ padding: 20 }}>
+        <form className="form card" onSubmit={submit}>
             <h2>Login</h2>
-            {err && <div style={{ color: 'red' }}>{err}</div>}
-            <input placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} /><br />
-            <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} /><br />
+            {err && <div className="error">{err}</div>}
+            <input placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} required />
+            <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} required />
             <select value={role} onChange={e => setRole(e.target.value)}>
                 <option>Farmer</option>
                 <option>FertilizerSeller</option>
                 <option>Customer</option>
                 <option>Driver</option>
-            </select><br />
-            <button type="submit">Login</button>
+            </select>
+            <button type="submit" className="btn">Login</button>
         </form>
     );
 }
