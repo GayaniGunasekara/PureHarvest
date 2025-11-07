@@ -4,7 +4,8 @@ const app = express();
 require('dotenv').config();
 const cors = require('cors');
 
-app.use(cors({ origin: 'http://localhost:4000' })); // dev
+app.use(cors()); // allow all origins during local dev (easiest)
+
 app.use(express.json());
 
 app.use('/api/auth', require('./routes/auth'));

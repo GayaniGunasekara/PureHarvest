@@ -1,25 +1,27 @@
 // src/utils/auth.js
 import { jwtDecode } from 'jwt-decode';
 
+const TOKEN_KEY = 'fc_token';
+
 export function setToken(token) {
-    localStorage.setItem('fc_token', token);
+    localStorage.setItem(TOKEN_KEY, token);
 }
 
 export function getToken() {
-    return localStorage.getItem('fc_token');
+    return localStorage.getItem(TOKEN_KEY);
 }
 
 export function removeToken() {
-    localStorage.removeItem('fc_token');
+    localStorage.removeItem(TOKEN_KEY);
 }
 
 export function getUserFromToken() {
-    const t = getToken();
-    if (!t) return null;
+    const token = getToken();
+    if (!token) return null;
     try {
-        return jwtDecode(t);
-    } catch (err) {
-        console.warn('Failed to decode token', err);
+        return jwtDecode(token); // returns { id, name, email, role, iat, exp }
+    } catch (error) {
+        console.warn('Token decode failed:', error);
         return null;
     }
 }

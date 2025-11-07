@@ -14,19 +14,19 @@ import { getToken } from './auth';
 */
 
 const api = axios.create({
-    // Dev-friendly default:
-    baseURL: '/api',          // <-- keep this if you added "proxy" to package.json
-    // For direct calls (no proxy), change to:
-    // baseURL: 'http://localhost:4000/api',
-    // or for production:
-    // baseURL: 'https://api.yourdomain.com/api',
+  // Dev-friendly default:
+  baseURL: 'http://localhost:4000/api'      // <-- keep this if you added "proxy" to package.json
+  // For direct calls (no proxy), change to:
+  // baseURL: 'http://localhost:4000/api',
+  // or for production:
+  // baseURL: 'https://api.yourdomain.com/api',
 });
 
 // Attach JWT Authorization header automatically if token exists
 api.interceptors.request.use(cfg => {
-    const token = getToken();
-    if (token) cfg.headers.Authorization = `Bearer ${token}`;
-    return cfg;
+  const token = getToken();
+  if (token) cfg.headers.Authorization = `Bearer ${token}`;
+  return cfg;
 });
 
 export default api;

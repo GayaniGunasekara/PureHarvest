@@ -32,6 +32,7 @@ exports.createOrder = async (req, res) => {
         const insertPromises = items.map(it => {
             const p = prodMap[it.product_id];
             return pool.query('INSERT INTO order_items (order_id, product_id, owner_id, qty, price) VALUES (?, ?, ?, ?, ?)', [orderId, it.product_id, p.owner_id, it.qty, p.price]);
+
         });
         await Promise.all(insertPromises);
 
