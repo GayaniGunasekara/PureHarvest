@@ -2,24 +2,26 @@
 const express = require('express');
 const app = express();
 require('dotenv').config();
+const cors = require('cors');
 
-// If you are using the frontend proxy (frontend/package.json "proxy"),
-// you do not need to enable CORS. If you call backend directly, enable CORS:
-//
-// const cors = require('cors');
-// app.use(cors({ origin: 'http://localhost:3000' }));
-//
-// For production, set origin to your frontend domain.
-
+app.use(cors({ origin: 'http://localhost:4000' })); // dev
 app.use(express.json());
 
-const authRoutes = require('./routes/auth');
-const productsRoutes = require('./routes/products');
-const ordersRoutes = require('./routes/orders');
+app.use('/api/auth', require('./routes/auth'));
+app.use('/api/products', require('./routes/products'));
+app.use('/api/orders', require('./routes/orders'));
 
-app.use('/api/auth', authRoutes);
-app.use('/api/products', productsRoutes);
-app.use('/api/orders', ordersRoutes);
+// db ping
+const db = require('./db');
+app.get('/api/ping', async (req, res) => {
+    try {
+        const [rows] = await db.query('SELECT 1 as ok'); // db is pool
+        res.json({ ok: rows[0].ok === 1 });
+    } catch (err) {
+        console.error('Ping DB error:', err);
+        res.status(500).json({ message: err.message });
+    }
+});
 
 const port = process.env.PORT || 4000;
 app.listen(port, () => console.log('Server listening on', port));

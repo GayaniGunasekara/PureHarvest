@@ -2,18 +2,22 @@
 const mysql = require('mysql2/promise');
 require('dotenv').config();
 
-/*
-  Replace env variables with your MySQL credentials.
-  If you run MySQL on a non-default port, add `port: 3306`.
-*/
 const pool = mysql.createPool({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0
+  host: process.env.DB_HOST || 'localhost',
+  port: process.env.DB_PORT ? Number(process.env.DB_PORT) : 3306,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
 });
 
+// helper to quickly test connection
+async function testConnection() {
+  const [rows] = await pool.query('SELECT 1 as ok');
+  return rows && rows[0] && rows[0].ok === 1;
+}
+
 module.exports = pool;
+module.exports.testConnection = testConnection;
