@@ -22,8 +22,6 @@ export default function App() {
   const user = getUserFromToken();
   return (
     <BrowserRouter>
-      <RoleNav user={user} />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
