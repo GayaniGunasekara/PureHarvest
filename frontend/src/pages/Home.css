@@ -1,0 +1,213 @@
+/* Home.css */
+
+
+
+/* ---------- Hero ---------- */
+.hero {
+    padding-top: 48px;
+    padding-bottom: 55px;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    /* default: horizontal layout; below media query will stack */
+}
+
+/* text column */
+.hero-text {
+    flex: 1 1 50%;
+    min-width: 280px;
+    text-align: left;
+}
+
+.title {
+    font-size: 2rem;
+    color: #18392B;
+    /* ~32px */
+    margin: 0 0 12px 0;
+}
+
+.lead {
+    margin: 0 0 18px 0;
+    color: #0f5132;
+    line-height: 1.6;
+    font-weight: bold;
+}
+
+/* buttons */
+.hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid transparent;
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn.primary {
+    background: #066839;
+    color: #fff;
+    border-color: #18392B;
+}
+
+.btn.ghost {
+    background: #fff;
+    color: #18392B;
+    border-color: #ddd;
+}
+
+/* image column */
+.hero-image-wrap {
+    flex: 0 0 420px;
+    /* fixed-ish width for image area on desktop */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(112, 240, 123, 0.08);
+}
+
+/* ---------- Features / other sections ---------- */
+.features,
+.how,
+.testimonials {
+    padding-top: 56px;
+    padding-bottom: 100px;
+}
+
+.features h2,
+.how h2,
+.testimonials h2 {
+    text-align: center;
+    margin-bottom: 28px;
+    color: #18392B;
+}
+
+.desc {
+    text-align: center;
+    color: #066839;
+    font-weight: bold;
+
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    color: #066839;
+
+}
+
+.feature-card {
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    background-color: #a0eca991;
+    box-shadow: 0 6px 18px rgba(2, 142, 35, 0.04);
+    border-style: groove;
+}
+
+/* how grid */
+.how-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    text-align: center;
+    color: #066839;
+}
+
+/* testimonials */
+.quote {
+    max-width: 800px;
+    margin: 0 auto;
+    font-style: italic;
+    color: #066839;
+}
+
+/* footer */
+.site-footer {
+    background: #0f5132;
+    color: #fff;
+    padding: 28px 0;
+    text-align: center;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+    :root {
+        --container-max-width: 100px;
+    }
+
+    .hero-image-wrap {
+        flex: 0 0 380px;
+    }
+
+    .hero-image {
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        /* stack: text then image */
+        align-items: flex-start;
+    }
+
+    .hero-text {
+        width: 100%;
+        text-align: left;
+    }
+
+    .hero-image-wrap {
+        width: 100%;
+        flex: none;
+        margin-top: 18px;
+    }
+
+    .hero-image {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 8px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .how-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* larger screens: more columns for features/how */
+@media (min-width: 769px) {
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .how-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
