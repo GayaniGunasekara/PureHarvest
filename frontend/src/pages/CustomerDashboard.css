@@ -1,0 +1,483 @@
+/* ---Navigation Bar Styles--- */
+/* --- Base Container (Header element) --- */
+.app-navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    /* White background */
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    /* Light shadow for a clean look */
+    font-family: Arial, sans-serif;
+}
+
+/* --- Left Section (Logo and Text) --- */
+.navbar-left-section {
+    display: flex;
+    align-items: flex-start;
+}
+
+.navbar-logo {
+    font-size: 28px;
+    color: #388e3c;
+    /* Green color for the leaf/logo */
+    margin-right: 10px;
+}
+
+.navbar-text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+.navbar-user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 2px;
+}
+
+.navbar-subtitle {
+    font-size: 14px;
+    font-weight: 400;
+    color: #555;
+    margin: 0;
+}
+
+/* Certified Badge (Farmer only) */
+.certified-badge {
+    background-color: #e8f5e9;
+    /* Light green background */
+    color: #388e3c;
+    /* Dark green text */
+    padding: 1px 6px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* --- Right Section (Buttons) --- */
+.navbar-right-section {
+    display: flex;
+    gap: 10px;
+}
+
+.navbar-btn {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #555;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.navbar-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* --- Base Container --- */
+.app-navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    /* White background */
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    /* Very light shadow for lift */
+    font-family: Arial, sans-serif;
+}
+
+/* --- Left Section (Logo and Text) --- */
+.navbar-left-section {
+    display: flex;
+    align-items: flex-start;
+    /* Aligns the logo with the title block */
+}
+
+.navbar-logo {
+    font-size: 28px;
+    color: #388e3c;
+    /* Green color for the leaf/logo */
+    margin-right: 10px;
+}
+
+.navbar-text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+.navbar-user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 2px;
+}
+
+.navbar-subtitle {
+    font-size: 14px;
+    font-weight: 400;
+    color: #555;
+    margin: 0;
+}
+
+/* Certified Badge (Farmer only) */
+.certified-badge {
+    background-color: #e8f5e9;
+    /* Light green background */
+    color: #388e3c;
+    /* Dark green text */
+    padding: 1px 6px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* --- Right Section (Buttons) --- */
+.navbar-right-section {
+    display: flex;
+    gap: 10px;
+}
+
+.navbar-btn {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #555;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.navbar-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* Specific styling for the Logout button */
+.logout-btn {
+    /* Slightly less prominent border */
+}
+
+/* Specific styling for the Cart button */
+.cart-btn {
+    /* Can be kept simple or styled more aggressively if needed */
+}
+
+
+/* --- Base Layout --- */
+.customer-dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* --- Tab Navigation --- */
+.dashboard-tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.tab-item {
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #555;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.tab-item.active {
+    color: #388e3c;
+    /* Green color for active tab */
+    border-bottom-color: #388e3c;
+    font-weight: 600;
+}
+
+/* --- Search and Filter Area --- */
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.search-container {
+    background-color: #fff;
+    padding: 15px 0;
+    margin-bottom: 30px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px 15px;
+    margin-bottom: 15px;
+}
+
+.search-icon {
+    color: #777;
+    margin-right: 10px;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 0;
+}
+
+.filter-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+    /* Align inputs/selects by their bottom edge */
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-group label {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.filter-group select,
+.filter-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 200px;
+    /* Uniform width for filter inputs */
+}
+
+.filter-group.price-group input {
+    width: 150px;
+    /* Slightly narrower width for price inputs */
+}
+
+/* --- Product Grid --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-card-image {
+    height: 180px;
+    background-color: #eee;
+    /* Default background */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+/* Mock Image placeholders for visual reference */
+.product-card-image.truck {
+    /*background-image: url('placeholder-image-for-fresh-produce-truck.jpg');
+    /* Replace with actual image URL */
+    background-image: none;
+    /* remove for final code */
+    background-color: #e6f7ff;
+}
+
+.product-card-image.beans {
+    /*background-image: url('placeholder-image-for-organic-beans.jpg');
+    /* Replace with actual image URL */
+    background-image: none;
+    /* remove for final code */
+    background-color: #f0fff4;
+}
+
+.product-card-image.tractor {
+    /*background-image: url('placeholder-image-for-organic-compost-tractor.jpg');
+    /* Replace with actual image URL */
+    background-image: none;
+    /* remove for final code */
+    background-color: #fffbe6;
+}
+
+
+.fertilizer-tag {
+    background-color: #ff9800;
+    /* Orange color */
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.product-card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.product-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+}
+
+.product-description {
+    font-size: 14px;
+    color: #777;
+    margin: 0 0 10px 0;
+}
+
+.product-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.price-text {
+    font-size: 16px;
+    font-weight: 700;
+    color: #388e3c;
+    /* Green for price */
+}
+
+.category-tag {
+    background-color: #e8f5e9;
+    color: #388e3c;
+    padding: 2px 6px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.product-location-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.rating-text {
+    color: #ffc107;
+    /* Yellow star */
+    font-weight: 600;
+}
+
+.seller-text {
+    font-size: 13px;
+    color: #777;
+    margin: 0 0 10px 0;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    background-color: #212121;
+    /* Dark button color */
+    color: #fff;
+    border: none;
+    padding: 12px 0;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #388e3c;
+}
+
+/* Find this block: */
+.product-card-image.truck {
+    /* DELETE or comment out the next line! */
+    /* background-image: url('placeholder-image-for-fresh-produce-truck.jpg');
+    /* Replace with actual image URL */
+    background-image: none;
+    /* remove for final code */
+    background-color: #e6f7ff;
+}
+
+/* Find this block: */
+.product-card-image.beans {
+    /* DELETE or comment out the next line! */
+    /*   background-image: url('placeholder-image-for-organic-beans.jpg');
+    /* Replace with actual image URL */
+    background-image: none;
+    /* remove for final code */
+    background-color: #f0fff4;
+}
+
+/* Find this block: */
+.product-card-image.tractor {
+    /* DELETE or comment out the next line! */
+    /*   background-image: url('placeholder-image-for-organic-compost-tractor.jpg');
+    /* Replace with actual image URL */
+    background-image: none;
+    /* remove for final code */
+    background-color: #fffbe6;
+}

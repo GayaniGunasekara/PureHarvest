@@ -8,7 +8,6 @@ import FarmerDashboard from './pages/FarmerDashboard';
 import SellerDashboard from './pages/SellerDashboard';
 import CustomerDashboard from './pages/CustomerDashboard';
 import DriverDashboard from './pages/DriverDashboard';
-import RoleNav from './components/RoleNav';
 import { getUserFromToken } from './utils/auth';
 import './index.css';
 

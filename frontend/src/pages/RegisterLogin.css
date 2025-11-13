@@ -1,0 +1,208 @@
+/* General Page Styling for Background */
+.register-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 50px;
+    background-color: #f7fff7;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Back to Home Link */
+.back-to-home {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.back-to-home a {
+    color: #388e3c;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.back-to-home a:hover {
+    text-decoration: underline;
+}
+
+/* Form Card Styling */
+.register-form-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px 25px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Logo and Title */
+.logo-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.logo-leaf {
+    font-size: 24px;
+    margin-right: 5px;
+    color: #388e3c;
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: 600;
+    color: #388e3c;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* Auth Tabs (Login/Sign Up) */
+.auth-tabs {
+    display: flex;
+    width: 100%;
+    max-width: 350px;
+    height: 45px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+.tab-button {
+    flex: 1;
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 8px;
+}
+
+.tab-button.active {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.login-button {
+    color: #555;
+    background-color: #f0f0f0;
+}
+
+/* Input Group Styling */
+.input-group {
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.input-label {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+/* Input Field and Select Styling */
+.input-group input,
+.role-select {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    color: #000;
+    background-color: #f7f7f7;
+}
+
+/* Placeholder appearance (matching the image) */
+.input-group input::placeholder {
+    color: #777;
+    opacity: 1;
+}
+
+/* Special styling for the dropdown arrow */
+.role-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23555555" d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 35px;
+    cursor: pointer;
+}
+
+/* Create Account Button */
+.create-account-btn {
+    width: 100%;
+    max-width: 350px;
+    padding: 15px;
+    margin-top: 15px;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.create-account-btn:hover {
+    background-color: #333;
+}
+
+/* Error Message Style */
+.error-message {
+    width: 100%;
+    max-width: 350px;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #fdd;
+    color: #c00;
+    border: 1px solid #c00;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+/* Add this class to your Register.css file for the "Welcome Back" text */
+.welcome-message {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+/* All other styles (register-page-container, register-form-card, 
+   logo-section, subtitle, auth-tabs, input-group, input-label, 
+   input, select, create-account-btn, etc.) remain the same from 
+   the previous response and will correctly style this Login form. */
+
+/* (Assuming the rest of the Register.css code is present) */

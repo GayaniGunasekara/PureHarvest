@@ -1,50 +1,124 @@
-.home-navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 40px;
-    background: white;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+html {
+    scroll-behavior: smooth;
 }
 
+/* HomeNavbar.css */
+
+/* NAV height variable so we can reuse it for page padding */
+
+
+/* Base navbar */
+.home-navbar {
+    position: fixed;
+    /* stays at top */
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    z-index: 9999;
+    transition: box-shadow 160ms ease, background-color 160ms ease, height 160ms ease, transform 160ms ease;
+    background-color: transparent;
+    /* transparent until scrolled */
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+/* wrapper to center content and control max width */
+.home-navbar .nav-inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+/* when scrolled - apply background + shadow */
+.home-navbar.scrolled {
+    background-color: var(--nav-bg);
+    box-shadow: 0 6px 18px rgba(16, 24, 40, 0.12);
+}
+
+/* optional small shrink when scrolled */
+.home-navbar.scrolled {
+    height: 64px;
+}
+
+/* logo */
 .logo-section {
     display: flex;
     align-items: center;
-    /* vertical alignment */
-    gap: 8px;
-    /* space between image and text */
+    gap: 10px;
 }
 
 .logo-image {
-    width: 32px;
-    /* adjust size as needed */
-    height: 32px;
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    border-radius: 6px;
 }
 
 .logo {
-    font-size: 18px;
-    font-weight: 600;
-    color: #18392B;
-    /* green */
+    font-weight: 700;
+    color: #083a27;
+    font-size: 1.05rem;
 }
 
+/* menu links */
 .menu {
     display: flex;
-    gap: 32px;
-    font-weight: bold;
-
+    gap: 18px;
+    align-items: center;
 }
 
 .menu a {
-    color: #18392B;
     text-decoration: none;
+    color: #0f5132;
+    font-weight: 600;
+    padding: 8px 10px;
+    transition: color 120ms ease, transform 120ms ease;
 }
 
 .menu a:hover {
-    color: #1B7D4F;
+    color: #066839;
+    transform: translateY(-1px);
 }
 
-.auth {
-    display: flex;
-    gap: 24px;
+/* mobile: collapse menu to smaller gap */
+@media (max-width: 768px) {
+    .menu {
+        gap: 12px;
+        font-size: 0.95rem;
+    }
+
+    .logo-image {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+
+.btn.login {
+    background-color: #066839;
+    color: #fff;
+    border-color: #18392B;
+    margin: 30px;
+}
+
+.btn.reg {
+    background: #fff;
+    color: #18392B;
+    border-color: #58bc88;
+}
+
+
+
+/* ensure focus visibility for keyboard users */
+.menu a:focus {
+    outline: 2px solid rgba(6, 104, 57, 0.15);
+    outline-offset: 2px;
 }
